@@ -2,11 +2,11 @@ locals {
   tls_termination = var.external_certificates_offer_url != null ? true : false
   traefik_base    = "ubuntu@20.04"
   tracks = {
-    alertmanager = "dev"
-    catalogue    = "dev"
-    grafana      = "dev"
-    loki         = "dev"
-    prometheus   = "dev"
+    alertmanager = try(var.track, "dev")
+    catalogue    = try(var.track, "dev")
+    grafana      = try(var.track, "dev")
+    loki         = try(var.track, "dev")
+    prometheus   = try(var.track, "dev")
     # alertmanager = "0.31"
     # catalogue    = "3.0"
     # grafana      = "12.4"

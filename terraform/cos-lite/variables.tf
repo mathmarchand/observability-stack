@@ -11,6 +11,12 @@ variable "risk" {
   default     = "edge"
 }
 
+variable "track" {
+  description = "Track for the applications are (unless overwritten by individual channels) deployed from"
+  type        = string
+  default     = "dev"
+}
+
 variable "base" {
   description = "The operating system on which to deploy. E.g. ubuntu@24.04. Check Charmhub for per-charm base support."
   default     = "ubuntu@24.04"
